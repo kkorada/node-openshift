@@ -11,7 +11,7 @@ app.use(bodyParser.json({ type: 'application/*+json' }));
 
 // console.log(os.networkInterfaces());
 
-app.get('/', (req, res, next) => res.json(os.networkInterfaces()));
+app.get('/', (req, res, next) => res.json(os.networkInterfaces().eth0[0].address));
 
 app.listen(app.get('port'), function () {
     console.log("Node app is running at :" + app.get('port'))
